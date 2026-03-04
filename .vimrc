@@ -27,3 +27,9 @@ set mouse=a " Activate the mouse
 
 " Prevent continuing comment characters when entering a new line
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o
+
+" Enable relative line numbers for netrw buffers
+augroup NetrwLineNumbers
+    autocmd!
+    autocmd FileType netrw setlocal relativenumber
+augroup end

@@ -38,6 +38,14 @@ vim.api.nvim_create_autocmd('BufEnter', {
     end,
 })
 
+-- Show relative numbers in netrw
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'netrw',
+    callback = function()
+        vim.wo.relativenumber = true
+    end,
+})
+
 -- Instead of using Vim backups, give Undotree access to long-running undos (e.g., undos/versions from days ago)
 --vim.opt.swapfile = false
 --vim.opt.backup = false
