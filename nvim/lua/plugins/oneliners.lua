@@ -5,8 +5,8 @@ return {
             require('nvim-highlight-colors').setup({})
         end
     },
---    { --Undotree
---        'mbbill/undotree',
---        vim.keymap.set('n', '<leader>u', vim.vmd.UndotreeToggle)
---    },
+--     { --Undotree
+--         'mbbill/undotree',
+--         vim.keymap.set('n', '<leader>u', vim.vmd.UndotreeToggle)
+--     },
 }
