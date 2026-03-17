@@ -14,8 +14,8 @@ return {
             vim.cmd('colorscheme kanagawa-wave')
 
             -- Adjust some colors
-            vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#444444' })
-            vim.api.nvim_set_hl(0, 'MatchParen', { fg = '#000000', bg = '#bfbfbf' })
+            vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#555555' })
+            vim.api.nvim_set_hl(0, 'MatchParen', { fg = '#dddddd', bg = '#333333', bold = true })
 
             -- Make backgrounds transparent
             local backs = {'Normal', 'NormalFloat', 'SignColumn', 'LineNr', 'FoldColumn', 'FloatBorder', 'TelescopeBorder'}
