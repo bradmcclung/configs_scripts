@@ -32,6 +32,11 @@ Back in the terminal, test the connection via
     ssh -T git@github.com
 
 If asked whether you're sure about connecting, enter yes.
+Set the following for config:
+
+    git config --global user.name 'brad<machine/OS>'
+    
+    git config --global user.email 'brad.h.mcclung@gmail.com'
 
 === Config Files =================================================================================================================
 
