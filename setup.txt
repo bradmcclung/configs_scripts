@@ -1,0 +1,94 @@
+=== Start ========================================================================================================================
+
+    sudo dnf install vim neovim python3-neovim git fish
+
+=== Config Konsole ===============================================================================================================
+
+Type Ctrl+Shift+, and go to Profiles on the left.
+Select +New on the right.
+Enter profile name, e.g., brad_profile, select default underneath, and change Command to /usr/bin/env bash.
+Set initial terminal size to 132 columns (fortran max width).
+On the left, select Appearance.
+On the right, the bottommost button should be Choose... for the font.
+Select desired font settings, e.g., font size 13.
+
+=== SSH Keygen ===================================================================================================================
+
+Open a CLI and run
+
+    ssh-keygen -t ed25519 -C 'brad.h.mcclung@gmail.com'
+
+    ssh-add ~/.ssh/id_ed25519
+
+    cat ~/.ssh/id_ed25519.pub
+
+Copy cat output.
+Go to Github, click the icon on the top right, click Settings.
+On the left, under Access, click SSH and GPG keys.
+On the top right, click New SSH Key.
+Click Add SSH Key below the key field.
+Back in the terminal, test the connection via
+
+    ssh -T git@github.com
+
+If asked whether you're sure about connecting, enter yes.
+
+=== Config Files =================================================================================================================
+
+    git clone git@github.com:bradmcclung/config_files.git
+
+    cp ~/Documents/config_files/.vimrc ~/.vimrc
+
+=== Neovim =======================================================================================================================
+
+Run
+
+    sudo dnf install neovim pyhton3-neovim
+
+Copy config files via
+
+    cp -r ~/Documents/config_files/nvim/ ~/.config/
+
+Run neovim and enjoy.
+
+=== Oh-My-Posh ===================================================================================================================
+
+Go to the Nerd Fonts website and download FiraMono Nerd Font.
+Open a CLI and enter
+
+    sudo mkdir -p /usr/local/share/fonts/nerd-fonts
+
+    sudo unzip ~/Downloads/<font>.zip -d /usr/local/share/fonts/nerd-fonts
+
+To refresh the font cache, run
+
+    fc-cache -fv
+
+Verify by running
+
+    fc-list | grep -i 'nerd'
+
+Open the Konsole settings via Ctrl+Shift+, and edit the desired profile to use the desired font, e.g.,
+FiraMonoNerdFontMono-Medium.
+To install Oh-My-Posh, run
+    
+    curl -s https://ohmyposh.dev/install.sh | bash -s
+
+Then enter
+
+    mkdir ~/.poshthemes/
+
+and copy jblab_2021.omp.json from config_files.
+Copy fedora_config.fish to ~/.config/fish/ via
+
+    cp ~/Documents/config_files/fedora_config.fish ~/.config/fish/config.fish
+
+Run fish and enjoy.
+
+=== Fedora KDE Minimize All Windows ==============================================================================================
+
+Open Fedora KDE settings, scroll down to Apps & Windows, select Window Management, and select KWin Scripts.
+There should be a MinimizeAll option.
+Select it, then scroll up to Input & Output, select Keyboard, then Shortcuts.
+Search for Window Management, and you should be able to see and/or set the shortcut to minimize all windows.
+It should be Meta+Shift+D, where the Meta key is the one with the Windows logo (or equivalent).

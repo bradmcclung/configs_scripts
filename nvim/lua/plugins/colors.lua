@@ -14,6 +14,9 @@ return {
             vim.cmd('colorscheme kanagawa-wave')
 
             -- Adjust some colors
+            vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = '#9fc666' })
+            vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#c18eee' })
+            vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#c18eee' })
             vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#555555' })
             vim.api.nvim_set_hl(0, 'MatchParen', { fg = '#dddddd', bg = '#333333', bold = true })
 
