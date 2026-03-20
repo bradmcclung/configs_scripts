@@ -18,6 +18,20 @@ On the left, select Appearance.
 On the right, the bottommost button should be Choose... for the font.
 Select desired font settings, e.g., font size 11.
 
+=== Grub Timeout =================================================================================================================
+
+To change the grub boot menu timeout, go to /etc/default/ and run
+
+    sudo vim grub
+
+There should be a line like GRUB_TIMEOUT = <number>.
+Change <number> to desired value, e.g., 60 (seconds).
+Then regenerate the grub config by running
+
+    sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+
+The grub boot menu should now last 60 seconds.
+
 === SSH Keygen ===================================================================================================================
 
 Open a CLI and run
