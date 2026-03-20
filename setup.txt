@@ -26,10 +26,15 @@ Select it, then scroll up to Input & Output, select Keyboard, then Shortcuts.
 Search for Window Management, and you should be able to see and/or set the shortcut to minimize all windows.
 It should be Meta+Shift+D, where the Meta key is the one with the Windows logo (or equivalent).
 
-=== Background ===================================================================================================================
+=== Backgrounds ==================================================================================================================
 
 To change the desktop background, go to the desktop (minimize all windows), and press Ctrl+Shift+D.
 Select the desired wallpaper.
+
+To change the lock screen background, go to System Settings on the taskbar.
+On the left, scroll down to Security & Privacy and select Screen Locking.
+Select the desired image.
+
 To change the login screen, first check the current theme by running
 
     cat /usr/lib/sddm/sddm.conf.d/kde_settings.conf
