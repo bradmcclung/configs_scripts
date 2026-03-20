@@ -59,8 +59,6 @@ Then edit the Current line in /usr/lib/sddm/sddm.conf.d/kde_settings.conf to
 
     Current=<new theme>
 
-
-
 === Grub Timeout =================================================================================================================
 
 To change the grub boot menu timeout, go to /etc/default/ and run
@@ -109,7 +107,7 @@ Set the following for config:
 
 === Neovim =======================================================================================================================
 
-Run
+Make sure you ran
 
     sudo dnf install neovim pyhton3-neovim
 
