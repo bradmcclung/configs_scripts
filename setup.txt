@@ -18,6 +18,44 @@ On the left, select Appearance.
 On the right, the bottommost button should be Choose... for the font.
 Select desired font settings, e.g., font size 11.
 
+=== Fedora KDE Minimize All Windows ==============================================================================================
+
+Open Fedora KDE settings, scroll down to Apps & Windows, select Window Management, and select KWin Scripts.
+There should be a MinimizeAll option.
+Select it, then scroll up to Input & Output, select Keyboard, then Shortcuts.
+Search for Window Management, and you should be able to see and/or set the shortcut to minimize all windows.
+It should be Meta+Shift+D, where the Meta key is the one with the Windows logo (or equivalent).
+
+=== Background ===================================================================================================================
+
+To change the desktop background, go to the desktop (minimize all windows), and press Ctrl+Shift+D.
+Select the desired wallpaper.
+To change the login screen, first check the current theme by running
+
+    cat /usr/lib/sddm/sddm.conf.d/kde_settings.conf
+
+Then run
+
+    sudo cp -r /usr/share/sddm/themes/<theme>/ /usr/share/sddm/themes/<new theme>
+
+Copy and paste your desired background image via
+
+    sudo cp ~/Pictures/backgrounds/<image> /usr/share/backgrounds/
+
+Go to /usr/share/sdd/themes/ and edit theme.conf
+
+    sudo vim theme.conf
+
+and change the background line to
+
+    background=/usr/share/backgrounds/<image>
+
+Then edit the Current line in /usr/lib/sddm/sddm.conf.d/kde_settings.conf to
+
+    Current=<new theme>
+
+
+
 === Grub Timeout =================================================================================================================
 
 To change the grub boot menu timeout, go to /etc/default/ and run
@@ -109,14 +147,6 @@ Copy fedora_config.fish to ~/.config/fish/ via
     cp ~/Documents/config_files/fedora_config.fish ~/.config/fish/config.fish
 
 Run fish and enjoy.
-
-=== Fedora KDE Minimize All Windows ==============================================================================================
-
-Open Fedora KDE settings, scroll down to Apps & Windows, select Window Management, and select KWin Scripts.
-There should be a MinimizeAll option.
-Select it, then scroll up to Input & Output, select Keyboard, then Shortcuts.
-Search for Window Management, and you should be able to see and/or set the shortcut to minimize all windows.
-It should be Meta+Shift+D, where the Meta key is the one with the Windows logo (or equivalent).
 
 === Nobara Starship Config ======================================================================================================
 
