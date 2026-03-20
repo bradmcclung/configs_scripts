@@ -2,6 +2,12 @@
 
     sudo dnf install vim neovim python3-neovim git fish
 
+=== System Display ===============================================================================================================
+
+Open the Fedora KDE settings app.
+On the left, scroll to Input & Output, select Display & Monitor, and select Display Configuration.
+Change the scale (second setting) to 125%.
+
 === Config Konsole ===============================================================================================================
 
 Type Ctrl+Shift+, and go to Profiles on the left.
@@ -10,7 +16,7 @@ Enter profile name, e.g., brad_profile, select default underneath, and change Co
 Set initial terminal size to 132 columns (fortran max width).
 On the left, select Appearance.
 On the right, the bottommost button should be Choose... for the font.
-Select desired font settings, e.g., font size 13.
+Select desired font settings, e.g., font size 11.
 
 === SSH Keygen ===================================================================================================================
 
