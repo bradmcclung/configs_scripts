@@ -1,6 +1,18 @@
 === Start ========================================================================================================================
 
-    sudo dnf install vim neovim python3-neovim git fish
+    sudo hostnamectl set-hostname <new hostname>
+
+    sudo dnf remove libreoffice\* dragon neochat
+
+    sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+    sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+    flatpak remote-delete fedora
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+    sudo dnf install vim neovim python3-neovim git fish vlc
+
+    flatpak install flathub com.spotify.Client
 
 === System Display ===============================================================================================================
 
@@ -151,6 +163,12 @@ Copy fedora_config.fish to ~/.config/fish/ via
 
 Run fish and enjoy.
 
-=== Nobara Starship Config ======================================================================================================
+=== Misc =========================================================================================================================
+
+    sudo dnf install https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm
+
+See https://paulsorensen.io/fedora-kde-plasma-post-installation-guide/ for more.
+
+=== Nobara Starship Config =======================================================================================================
 
 Copy starship.toml to ~/.config/ and /usr/share/starship/
