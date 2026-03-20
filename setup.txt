@@ -97,3 +97,7 @@ There should be a MinimizeAll option.
 Select it, then scroll up to Input & Output, select Keyboard, then Shortcuts.
 Search for Window Management, and you should be able to see and/or set the shortcut to minimize all windows.
 It should be Meta+Shift+D, where the Meta key is the one with the Windows logo (or equivalent).
+
+=== Nobara Startship Config ======================================================================================================
+
+Copy starship.toml to ~/.config/ and /usr/share/starship/
