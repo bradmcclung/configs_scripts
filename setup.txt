@@ -168,6 +168,11 @@ Run fish and enjoy.
 
     sudo dnf install https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm
 
+Go to fluxer.app and download the rpm x64 file.
+In a CLI, run
+
+    sudo dnf install ~/Downloads/fluxer-stable-0.0.8-x86_64.rpm
+
 See https://paulsorensen.io/fedora-kde-plasma-post-installation-guide/ for more.
 
 === Nobara Starship Config =======================================================================================================
