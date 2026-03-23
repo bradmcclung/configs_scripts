@@ -13,7 +13,7 @@
     sudo dnf install vim neovim python3-neovim git fish vlc
 
     flatpak install flathub com.spotify.Client
-    flatpak isntall flathub com.discordapp.Discord
+    flatpak install flathub com.discordapp.Discord
 
 === System Display ===============================================================================================================
 
