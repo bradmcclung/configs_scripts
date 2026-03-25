@@ -10,7 +10,7 @@
     flatpak remote-delete fedora
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-    sudo dnf install vim neovim python3-neovim git fish vlc kompare
+    sudo dnf install vim neovim python3-neovim git fish vlc kompare gdb
 
     flatpak install flathub com.spotify.Client
     flatpak install flathub com.discordapp.Discord
