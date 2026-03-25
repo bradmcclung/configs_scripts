@@ -15,6 +15,7 @@ vim.opt.softtabstop = 4
 vim.opt.autoindent = false
 vim.opt.smartindent = false
 vim.opt.cindent = false
+vim.opt.indentexpr = ''
 
 vim.opt.hlsearch = false -- Prevents Vim search from keeping searched terms highlighted
 vim.opt.scrolloff = 8 -- When scrolling through a file, there will always be at least 8 lines above or below current line
@@ -43,6 +44,16 @@ vim.api.nvim_create_autocmd('FileType', {
     pattern = 'netrw',
     callback = function()
         vim.wo.relativenumber = true
+    end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'tex',
+    callback = function()
+        vim.opt_local.autoindent = false
+        vim.opt_local.smartindent = false
+        vim.opt_local.cindent = false
+        vim.opt_local.indentexpr = ''
     end,
 })
 
