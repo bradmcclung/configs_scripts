@@ -6,7 +6,7 @@ home/ contains .bashrc and .vimrc.
 
 nvim/ contains all the configuration for Neovim.
 
-usr-local-bin/ contain my own user-defined scripts.
+scripts/ contain my own user-defined scripts.
 
 === Start ========================================================================================================================
 
@@ -122,7 +122,7 @@ Set the following for config:
     
     git config --global user.email 'brad.h.mcclung@gmail.com'
 
-=== Config Files =================================================================================================================
+=== LaTeX, Configs, and Scripts ==================================================================================================
 
     git clone git@github.com:bradmcclung/latex.git
     git clone git@github.com:bradmcclung/config_files.git
