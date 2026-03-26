@@ -10,7 +10,7 @@
     flatpak remote-delete fedora
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-    sudo dnf install vim neovim python3-neovim git fish vlc kompare gdb
+    sudo dnf install vim neovim python3-neovim git fish vlc kompare gdb fd-find
 
     flatpak install flathub com.spotify.Client
     flatpak install flathub com.discordapp.Discord
@@ -122,8 +122,9 @@ Set the following for config:
 
 Make sure you ran
 
-    sudo dnf install neovim pyhton3-neovim
+    sudo dnf install neovim pyhton3-neovim fd-find
 
+(fd-find is for the telescope plugin).
 Copy config files via
 
     cp -r ~/Documents/config_files/nvim/ ~/.config/
