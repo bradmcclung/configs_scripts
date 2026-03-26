@@ -122,6 +122,7 @@ Set the following for config:
 
 === Config Files =================================================================================================================
 
+    git clone git@github.com:bradmcclung/latex.git
     git clone git@github.com:bradmcclung/config_files.git
 
     cp ~/Documents/config_files/.vimrc ~/.vimrc
