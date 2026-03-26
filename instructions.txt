@@ -100,7 +100,7 @@ The grub boot menu should now last 60 seconds.
 
 Open a CLI and run
 
-    ssh-keygen -t ed25519 -C 'brad.h.mcclung@gmail.com'
+    ssh-keygen -t ed25519 -C '<user email>'
 
     ssh-add ~/.ssh/id_ed25519
 
@@ -116,16 +116,21 @@ Back in the terminal, test the connection via
     ssh -T git@github.com
 
 If asked whether you're sure about connecting, enter yes.
-Set the following for config:
+Set the following for config (I recommend using the hostname you set earlier):
 
-    git config --global user.name 'brad<machine/OS>'
-    
-    git config --global user.email 'brad.h.mcclung@gmail.com'
+    git config --global user.name '<hostname>'
+
+    git config --global user.email '<user email>'
 
 === LaTeX, Configs, and Scripts ==================================================================================================
 
+Go to ~/Documents/ and run
+
     git clone git@github.com:bradmcclung/latex.git
-    git clone git@github.com:bradmcclung/config_files.git
+
+    git clone git@github.com:bradmcclung/configs_scripts.git
+
+Then run
 
     cp ~/Documents/config_files/.bashrc ~/.bashrc
     cp ~/Documents/config_files/.vimrc ~/.vimrc
@@ -135,6 +140,7 @@ Set the following for config:
 If needed for the scripts, run
 
     sudo chown $USER:$USER /usr/local/bin/*
+
     sudo chmod u+x /usr/local/bin/*
 
 === Neovim =======================================================================================================================
@@ -148,7 +154,19 @@ Copy config files via
 
     cp -r ~/Documents/config_files/nvim/ ~/.config/
 
-Run neovim and enjoy.
+Run
+
+    nvim .
+
+and Lazy should install everything.
+To verify, stay in the Lazy menu (if you're not, enter :Lazy).
+Press Shift+U to update and Shift+S to sync (I'm not sure if the syncing is necessary, I just like to do it).
+Once complete, press q to exit the Lazy menu.
+You can also run
+
+    :checkhealth
+
+in any Neovim buffer to find any remaining issues.
 
 === Oh-My-Posh ===================================================================================================================
 
@@ -185,6 +203,8 @@ Copy fedora_config.fish to ~/.config/fish/ via
 Run fish and enjoy.
 
 === Misc =========================================================================================================================
+
+Office suite:
 
     sudo dnf install https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm
 
