@@ -1,3 +1,11 @@
+
+cli_files/ contain files that configure fish and the prompt in the CLI.
+fedora_config.fish and jblab_2021.omp.json are for Fedora Linux, and nobara_config.fish and starship.toml are for Nobara Linux.
+
+nvim/ contains all the configuration for Neovim.
+
+usr-local-bin/ contain my own user-defined scripts.
+
 === Start ========================================================================================================================
 
     sudo hostnamectl set-hostname <new hostname>
@@ -178,4 +186,7 @@ See https://paulsorensen.io/fedora-kde-plasma-post-installation-guide/ for more.
 
 === Nobara Starship Config =======================================================================================================
 
-Copy starship.toml to ~/.config/ and /usr/share/starship/
+Copy starship.toml to ~/.config/ and /usr/share/starship/.
+Copy nobara_config.fish to ~/config/fish via
+
+    cp ~/Documents/config_files/nobara_config.fish ~/.config/fish/conig.fish
