@@ -132,6 +132,11 @@ Set the following for config:
 
     cp ~/Documents/config_files/scripts/* /usr/local/bin/
 
+If needed for the scripts, run
+
+    sudo chown $USER:$USER /usr/local/bin/*
+    sudo chmod u+x /usr/local/bin/*
+
 === Neovim =======================================================================================================================
 
 Make sure you ran
