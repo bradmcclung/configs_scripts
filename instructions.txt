@@ -2,6 +2,8 @@
 cli_files/ contain files that configure fish and the prompt in the CLI.
 fedora_config.fish and jblab_2021.omp.json are for Fedora Linux, and nobara_config.fish and starship.toml are for Nobara Linux.
 
+home/ contains .bashrc and .vimrc.
+
 nvim/ contains all the configuration for Neovim.
 
 usr-local-bin/ contain my own user-defined scripts.
@@ -125,7 +127,10 @@ Set the following for config:
     git clone git@github.com:bradmcclung/latex.git
     git clone git@github.com:bradmcclung/config_files.git
 
+    cp ~/Documents/config_files/.bashrc ~/.bashrc
     cp ~/Documents/config_files/.vimrc ~/.vimrc
+
+    cp ~/Documents/config_files/scripts/* /usr/local/bin/
 
 === Neovim =======================================================================================================================
 
