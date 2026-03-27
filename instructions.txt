@@ -8,7 +8,9 @@ nvim/ contains all the configuration for Neovim.
 
 scripts/ contain my own user-defined scripts.
 
+==================================================================================================================================
 === Start ========================================================================================================================
+==================================================================================================================================
 
     sudo hostnamectl set-hostname <new hostname>
 
@@ -20,18 +22,22 @@ scripts/ contain my own user-defined scripts.
     flatpak remote-delete fedora
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-    sudo dnf install vim neovim python3-neovim git fish vlc kompare gdb fd-find
+    sudo dnf install vim neovim python3-neovim git fish vlc kompare gdb fd-find texlive-scheme-medium
 
     flatpak install flathub com.spotify.Client
     flatpak install flathub com.discordapp.Discord
 
+==================================================================================================================================
 === System Display ===============================================================================================================
+==================================================================================================================================
 
 Open the Fedora KDE settings app.
 On the left, scroll to Input & Output, select Display & Monitor, and select Display Configuration.
 Change the scale (second setting) to 125%.
 
+==================================================================================================================================
 === Config Konsole ===============================================================================================================
+==================================================================================================================================
 
 Type Ctrl+Shift+, and go to Profiles on the left.
 Select +New on the right.
@@ -41,7 +47,9 @@ On the left, select Appearance.
 On the right, the bottommost button should be Choose... for the font.
 Select desired font settings, e.g., font size 11.
 
+==================================================================================================================================
 === Fedora KDE Minimize All Windows ==============================================================================================
+==================================================================================================================================
 
 Open Fedora KDE settings, scroll down to Apps & Windows, select Window Management, and select KWin Scripts.
 There should be a MinimizeAll option.
@@ -49,7 +57,9 @@ Select it, then scroll up to Input & Output, select Keyboard, then Shortcuts.
 Search for Window Management, and you should be able to see and/or set the shortcut to minimize all windows.
 It should be Meta+Shift+D, where the Meta key is the one with the Windows logo (or equivalent).
 
+==================================================================================================================================
 === Backgrounds ==================================================================================================================
+==================================================================================================================================
 
 To change the desktop background, go to the desktop (minimize all windows), and press Ctrl+Shift+D.
 Select the desired wallpaper.
@@ -82,7 +92,9 @@ Then edit the Current line in /usr/lib/sddm/sddm.conf.d/kde_settings.conf to
 
     Current=<new theme>
 
+==================================================================================================================================
 === Grub Timeout =================================================================================================================
+==================================================================================================================================
 
 To change the grub boot menu timeout, go to /etc/default/ and run
 
@@ -96,7 +108,9 @@ Then regenerate the grub config by running
 
 The grub boot menu should now last 60 seconds.
 
+==================================================================================================================================
 === SSH Keygen ===================================================================================================================
+==================================================================================================================================
 
 Open a CLI and run
 
@@ -122,11 +136,11 @@ Set the following for config (I recommend using the hostname you set earlier):
 
     git config --global user.email '<user email>'
 
+==================================================================================================================================
 === LaTeX, Configs, and Scripts ==================================================================================================
+==================================================================================================================================
 
 Go to ~/Documents/ and run
-
-    git clone git@github.com:bradmcclung/latex.git
 
     git clone git@github.com:bradmcclung/configs_scripts.git
 
@@ -143,7 +157,69 @@ If needed for the scripts, run
 
     sudo chmod u+x /usr/local/bin/*
 
+==================================================================================================================================
+=== LaTeX ========================================================================================================================
+==================================================================================================================================
+
+Go to ~/Documents/ and run
+
+    git clone git@github.com:bradmcclung/latex.git
+
+Make sure you ran sudo dnf install texlive-scheme-medium.
+LaTeX packages:
+
+    sudo dnf install texlive-biblatex-ext texlive-derivative texlive-physics texlive-isodate texlive-microtype texlive-mathtools \
+    texlive-emptypage texlive-parskip texlive-multirow texlive-soul texlive-tcolorbox texlive-appendix texlive-textgreek \
+    texlive-relsize texlive-scalerel texlive-stackengine texlive-anyfontsize texlive-arydshln texlive-bbding texlive-ulem
+
+------ Manually Install .sty Files from .ins Files ----------------------------------------------------------
+
+To generate a .sty file from a .ins file, run
+
+    latex <filename>.ins
+
+That should generate <package name>.sty.
+To install, run
+
+    sudo mkdir /usr/share/texlive/texmf-dist/tex/latex/<package name>/
+    sudo cp <package name>.sty /usr/share/texlive/texmf-dist/tex/latex/<package name>/
+
+(or try mv <package name>.sty /usr/share/texlive/texmf-dist/tex/latex/<package name>/).
+Then run
+
+    sudo mktexlsr
+
+------ Create .ins Files from .dtx Files ---------------------------------------------------------------------
+
+In the directory where the .dtx file is, run
+
+    nvim <package>.ins
+
+enter
+
+    \input docstrip
+    \generate{
+    \file{<package>.sty}{\from{<package>.dtx}{<guard>}}
+    }
+    \endbatchfile
+
+and save.
+To find the correct guard, run
+
+    grep -n '<\*' <package>.dtx
+
+Replace <guard> in the .ins file with the correct guard.
+In the case of perpage.dtx, it returned driver and style (it could also be something like package), and the correct guard was style.
+If unsure, you replace <guard> with *.
+Then run
+
+    latex <package>.ins
+
+like normal and follow the rest of the instructions above.
+
+==================================================================================================================================
 === Neovim =======================================================================================================================
+==================================================================================================================================
 
 Make sure you ran
 
@@ -168,7 +244,9 @@ You can also run
 
 in any Neovim buffer to find any remaining issues.
 
+==================================================================================================================================
 === Oh-My-Posh ===================================================================================================================
+==================================================================================================================================
 
 Go to the Nerd Fonts website and download FiraMono Nerd Font.
 Open a CLI and enter
@@ -202,7 +280,9 @@ Copy fedora_config.fish to ~/.config/fish/ via
 
 Run fish and enjoy.
 
+==================================================================================================================================
 === Misc =========================================================================================================================
+==================================================================================================================================
 
 Office suite:
 
@@ -215,7 +295,9 @@ In a CLI, run
 
 See https://paulsorensen.io/fedora-kde-plasma-post-installation-guide/ for more.
 
+==================================================================================================================================
 === Nobara Starship Config =======================================================================================================
+==================================================================================================================================
 
 Copy starship.toml to ~/.config/ and /usr/share/starship/.
 Copy nobara_config.fish to ~/config/fish via
