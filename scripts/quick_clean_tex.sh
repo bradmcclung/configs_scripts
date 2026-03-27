@@ -1,1 +1,1 @@
-rm ./*.aux ./*.bcf ./*.log ./*.xml ./*.toc
+rm ./*.aux ./*.bcf ./*.log ./*.out ./*.xml ./*.toc
