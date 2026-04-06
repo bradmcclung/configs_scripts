@@ -136,20 +136,21 @@ Set the following for config (I recommend using the hostname you set earlier):
     git config --global user.email '<user email>'
 
 ==================================================================================================================================
-=== Configs & Scripts and My Logs ================================================================================================
+=== My Logs and Configs & Scripts ================================================================================================
 ==================================================================================================================================
 
 Go to ~/Documents/ and run
 
-    git clone git@github.com:bradmcclung/configs_scripts.git
     git clone git@github.com:bradmcclung/my_logs.git
+    git clone git@github.com:bradmcclung/configs_scripts.git
 
 Then run
 
-    cp ~/Documents/config_files/.bashrc ~/.bashrc
-    cp ~/Documents/config_files/.vimrc ~/.vimrc
+    cp ~/Documents/configs_scripts/.bashrc ~/.bashrc
+    cp ~/Documents/configs_scripts/.vimrc ~/.vimrc
 
-    cp ~/Documents/config_files/scripts/* /usr/local/bin/
+    cp ~/Documents/configs_scripts/fedora-kde/fedora-updates.sh /usr/local/bin/
+    cp ~/Documents/configs_scripts/scripts/* /usr/local/bin/
 
 If needed for the scripts, run
 
@@ -228,7 +229,7 @@ Make sure you ran
 (fd-find is for the telescope plugin).
 Copy config files via
 
-    cp -r ~/Documents/config_files/nvim/ ~/.config/
+    cp -r ~/Documents/configs_scripts/nvim/ ~/.config/
 
 Run
 
@@ -276,7 +277,7 @@ Then enter
 and copy jblab_2021.omp.json from ~/Documents/configs_scripts/fedora-kde/.
 Copy fedora-kde/config.fish to ~/.config/fish/ via
 
-    cp ~/Documents/config_files/fedora-kde/config.fish ~/.config/fish/
+    cp ~/Documents/configs_scripts/fedora-kde/config.fish ~/.config/fish/
 
 Run fish and enjoy.
 
@@ -296,10 +297,9 @@ In a CLI, run
 See https://paulsorensen.io/fedora-kde-plasma-post-installation-guide/ for more.
 
 ==================================================================================================================================
-=== Nobara Starship Config =======================================================================================================
+=== Nobara =======================================================================================================================
 ==================================================================================================================================
 
-Copy ~/Documents/configs_scripts/nobara/starship.toml to ~/.config/ and /usr/share/starship/.
-Copy nobara/config.fish to ~/config/fish/ via
-
-    cp ~/Documents/config_files/nobara/config.fish ~/.config/fish/
+    cp ~/Documents/configs_scripts/nobara/starship.toml ~/.config/
+    cp ~/Documents/configs_scripts/nobara/starship.toml /usr/share/starship/
+    cp ~/Documents/configs_scripts/nobara/config.fish ~/.config/fish/
