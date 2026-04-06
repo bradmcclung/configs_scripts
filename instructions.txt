@@ -21,7 +21,7 @@ scripts/ contain my own user-defined scripts.
     flatpak remote-delete fedora
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-    sudo dnf install vim neovim python3-neovim git fish vlc kompare gdb fd-find texlive-scheme-medium
+    sudo dnf install vim neovim python3-neovim git fish vlc kompare gdb fd-find texlive-scheme-medium fastfetch
 
     flatpak install flathub com.spotify.Client
     flatpak install flathub com.discordapp.Discord
