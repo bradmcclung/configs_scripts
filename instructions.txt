@@ -173,7 +173,7 @@ LaTeX packages:
     texlive-emptypage texlive-parskip texlive-multirow texlive-soul texlive-tcolorbox texlive-appendix texlive-textgreek \
     texlive-relsize texlive-scalerel texlive-stackengine texlive-anyfontsize texlive-arydshln texlive-bbding texlive-ulem
 
------- Manually Install .sty Files from .ins Files ----------------------------------------------------------
+------ Manually Install .sty Files from .ins Files -----------------------------------------------------------
 
 To generate a .sty file from a .ins file, run
 
