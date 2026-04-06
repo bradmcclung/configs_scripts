@@ -1,3 +1,4 @@
+test linnnnne
 
 fedora-kde/ and nobara/ contain files that configure fish and the prompt in the CLI for each respective distro.
 
