@@ -16,7 +16,7 @@ for repo in \
     /home/bradmcclung/Documents/configs_scripts \
     /home/bradmcclung/Documents/my_logs
 do
-    echo "Updating $repo"
+    echo "------ $repo ------"
     git -C "$repo" pull
     echo
 done
