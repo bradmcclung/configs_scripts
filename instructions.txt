@@ -1,8 +1,7 @@
 
-cli_files/ contain files that configure fish and the prompt in the CLI.
-fedora_config.fish and jblab_2021.omp.json are for Fedora Linux, and nobara_config.fish and starship.toml are for Nobara Linux.
+fedora-kde/ and nobara/ contain files that configure fish and the prompt in the CLI for each respective distro.
 
-home/ contains .bashrc and .vimrc.
+home-dotfiles/ contains .bashrc and .vimrc.
 
 nvim/ contains all the configuration for Neovim.
 
@@ -137,12 +136,13 @@ Set the following for config (I recommend using the hostname you set earlier):
     git config --global user.email '<user email>'
 
 ==================================================================================================================================
-=== LaTeX, Configs, and Scripts ==================================================================================================
+=== Configs & Scripts and My Logs ================================================================================================
 ==================================================================================================================================
 
 Go to ~/Documents/ and run
 
     git clone git@github.com:bradmcclung/configs_scripts.git
+    git clone git@github.com:bradmcclung/my_logs.git
 
 Then run
 
@@ -273,10 +273,10 @@ Then enter
 
     mkdir ~/.poshthemes/
 
-and copy jblab_2021.omp.json from config_files.
-Copy fedora_config.fish to ~/.config/fish/ via
+and copy jblab_2021.omp.json from ~/Documents/configs_scripts/fedora-kde/.
+Copy fedora-kde/config.fish to ~/.config/fish/ via
 
-    cp ~/Documents/config_files/fedora_config.fish ~/.config/fish/config.fish
+    cp ~/Documents/config_files/fedora-kde/config.fish ~/.config/fish/
 
 Run fish and enjoy.
 
@@ -299,7 +299,7 @@ See https://paulsorensen.io/fedora-kde-plasma-post-installation-guide/ for more.
 === Nobara Starship Config =======================================================================================================
 ==================================================================================================================================
 
-Copy starship.toml to ~/.config/ and /usr/share/starship/.
-Copy nobara_config.fish to ~/config/fish via
+Copy ~/Documents/configs_scripts/nobara/starship.toml to ~/.config/ and /usr/share/starship/.
+Copy nobara/config.fish to ~/config/fish/ via
 
-    cp ~/Documents/config_files/nobara_config.fish ~/.config/fish/conig.fish
+    cp ~/Documents/config_files/nobara/config.fish ~/.config/fish/
