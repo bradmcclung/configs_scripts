@@ -1,5 +1,0 @@
-Init system:
-    Start with runit (good performance and documentation/support)
-    Switch to dinit if runit causes too many issues.
-
-
