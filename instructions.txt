@@ -149,14 +149,14 @@ Then run
     cp ~/Documents/configs_scripts/.bashrc ~/.bashrc
     cp ~/Documents/configs_scripts/.vimrc ~/.vimrc
 
-    cp ~/Documents/configs_scripts/fedora-kde/fedora-updates.sh /usr/local/bin/
-    cp ~/Documents/configs_scripts/scripts/* /usr/local/bin/
+    cp ~/Documents/configs_scripts/fedora-kde/fedora-updates.sh ~/bin/
+    cp ~/Documents/configs_scripts/scripts/* ~/bin/
 
 If needed for the scripts, run
 
-    sudo chown $USER:$USER /usr/local/bin/*
+    sudo chown $USER:$USER ~/bin/*
 
-    sudo chmod u+x /usr/local/bin/*
+    sudo chmod u+x ~/bin/*
 
 ==================================================================================================================================
 === LaTeX ========================================================================================================================
@@ -303,3 +303,4 @@ See https://paulsorensen.io/fedora-kde-plasma-post-installation-guide/ for more.
     cp ~/Documents/configs_scripts/nobara/starship.toml ~/.config/
     cp ~/Documents/configs_scripts/nobara/starship.toml /usr/share/starship/
     cp ~/Documents/configs_scripts/nobara/config.fish ~/.config/fish/
+    cp ~/Documents/configs_scripts/nobara/nobara_updates.sh ~/bin/
