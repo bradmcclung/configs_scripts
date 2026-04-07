@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- Set textwidth to Fortran max textwidth for word wrap
 vim.api.nvim_create_autocmd('BufEnter', {
-    pattern = '*',
+    pattern = { '*.f90', '*.f95', '*.f03', '*.f08' },
     callback = function()
         vim.opt_local.textwidth = 132
         vim.opt_local.formatoptions:append('t')
