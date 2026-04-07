@@ -1,11 +1,23 @@
 
 fedora-kde/ and nobara/ contain files that configure fish and the prompt in the CLI for each respective distro.
 
-home-dotfiles/ contains .bashrc and .vimrc.
+home_dotfiles/ contains .bashrc and .vimrc.
 
 nvim/ contains all the configuration for Neovim.
 
 scripts/ contain my own user-defined scripts.
+
+Anything specific to a particular distro will be wrapped by:
+
+    ****** <Distro> ******************************************************************************************
+    *   
+    *   ...
+    *   ...
+    *   ...
+    *   
+    **********************************************************************************************************
+
+everything else applies to both distros.
 
 ==================================================================================================================================
 === Start ========================================================================================================================
@@ -14,14 +26,21 @@ scripts/ contain my own user-defined scripts.
     sudo hostnamectl set-hostname <new hostname>
 
     sudo dnf remove libreoffice\* dragon neochat
-
-    sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-    sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-    flatpak remote-delete fedora
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
     sudo dnf install vim neovim python3-neovim git fish vlc kompare gdb fd-find texlive-scheme-medium fastfetch
+
+    ****** Fedora ********************************************************************************************
+    *   
+    *   Add rpm repos to dnf
+    *
+    *       sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+    *       sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+    *   
+    *   Flatpak flathub is better than flatpak fedora
+    *   
+    *       flatpak remote-delete fedora
+    *       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    *   
+    **********************************************************************************************************
 
     flatpak install flathub com.spotify.Client
     flatpak install flathub com.discordapp.Discord
@@ -30,7 +49,7 @@ scripts/ contain my own user-defined scripts.
 === System Display ===============================================================================================================
 ==================================================================================================================================
 
-Open the Fedora KDE settings app.
+Open the KDE settings app.
 On the left, scroll to Input & Output, select Display & Monitor, and select Display Configuration.
 Change the scale (second setting) to 125%.
 
@@ -47,65 +66,77 @@ On the right, the bottommost button should be Choose... for the font.
 Select desired font settings, e.g., font size 11.
 
 ==================================================================================================================================
-=== Fedora KDE Minimize All Windows ==============================================================================================
+=== Minimize All Windows =========================================================================================================
 ==================================================================================================================================
 
-Open Fedora KDE settings, scroll down to Apps & Windows, select Window Management, and select KWin Scripts.
-There should be a MinimizeAll option.
-Select it, then scroll up to Input & Output, select Keyboard, then Shortcuts.
-Search for Window Management, and you should be able to see and/or set the shortcut to minimize all windows.
-It should be Meta+Shift+D, where the Meta key is the one with the Windows logo (or equivalent).
+    ****** Fedora ********************************************************************************************
+    *
+    *   Open Fedora KDE settings, scroll down to Apps & Windows, select Window Management, and select KWin Scripts.
+    *   There should be a MinimizeAll option.
+    *   Select it, then scroll up to Input & Output, select Keyboard, then Shortcuts.
+    *   Search for Window Management, and you should be able to see and/or set the shortcut to minimize all windows.
+    *   It should be Meta+Shift+D, where the Meta key is the one with the Windows logo (or equivalent).
+    *
+    **********************************************************************************************************
 
 ==================================================================================================================================
 === Backgrounds ==================================================================================================================
 ==================================================================================================================================
 
-To change the desktop background, go to the desktop (minimize all windows), and press Ctrl+Shift+D.
-Select the desired wallpaper.
-
-To change the lock screen background, go to System Settings on the taskbar.
-On the left, scroll down to Security & Privacy and select Screen Locking.
-Select the desired image.
-
-To change the login screen, first check the current theme by running
-
-    cat /usr/lib/sddm/sddm.conf.d/kde_settings.conf
-
-Then run
-
-    sudo cp -r /usr/share/sddm/themes/<theme>/ /usr/share/sddm/themes/<new theme>
-
-Copy and paste your desired background image via
-
-    sudo cp ~/Pictures/backgrounds/<image> /usr/share/backgrounds/
-
-Go to /usr/share/sdd/themes/ and edit theme.conf
-
-    sudo vim theme.conf
-
-and change the background line to
-
-    background=/usr/share/backgrounds/<image>
-
-Then edit the Current line in /usr/lib/sddm/sddm.conf.d/kde_settings.conf to
-
-    Current=<new theme>
+    ****** Fedora ********************************************************************************************
+    *    
+    *   To change the desktop background, go to the desktop (minimize all windows), and press Ctrl+Shift+D.
+    *   Select the desired wallpaper.
+    *   
+    *   To change the lock screen background, go to System Settings on the taskbar.
+    *   On the left, scroll down to Security & Privacy and select Screen Locking.
+    *   Select the desired image.
+    *   
+    *   To change the login screen, first check the current theme by running
+    *   
+    *       cat /usr/lib/sddm/sddm.conf.d/kde_settings.conf
+    *   
+    *   Then run
+    *   
+    *       sudo cp -r /usr/share/sddm/themes/<theme>/ /usr/share/sddm/themes/<new theme>
+    *   
+    *   Copy and paste your desired background image via
+    *   
+    *       sudo cp ~/Pictures/backgrounds/<image> /usr/share/backgrounds/
+    *   
+    *   Go to /usr/share/sdd/themes/ and edit theme.conf
+    *   
+    *       sudo vim theme.conf
+    *   
+    *   and change the background line to
+    *   
+    *       background=/usr/share/backgrounds/<image>
+    *   
+    *   Then edit the Current line in /usr/lib/sddm/sddm.conf.d/kde_settings.conf to
+    *   
+    *       Current=<new theme>
+    *   
+    **********************************************************************************************************
 
 ==================================================================================================================================
 === Grub Timeout =================================================================================================================
 ==================================================================================================================================
 
-To change the grub boot menu timeout, go to /etc/default/ and run
-
-    sudo vim grub
-
-There should be a line like GRUB_TIMEOUT = <number>.
-Change <number> to desired value, e.g., 60 (seconds).
-Then regenerate the grub config by running
-
-    sudo grub2-mkconfig -o /boot/grub2/grub.cfg
-
-The grub boot menu should now last 60 seconds.
+    ****** Fedora ********************************************************************************************
+    *   
+    *   To change the grub boot menu timeout, go to /etc/default/ and run
+    *   
+    *       sudo vim grub
+    *   
+    *   There should be a line like GRUB_TIMEOUT = <number>.
+    *   Change <number> to desired value, e.g., 60 (seconds).
+    *   Then regenerate the grub config by running
+    *   
+    *       sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+    *   
+    *   The grub boot menu should now last 60 seconds.
+    *   
+    **********************************************************************************************************
 
 ==================================================================================================================================
 === SSH Keygen ===================================================================================================================
@@ -146,11 +177,22 @@ Go to ~/Documents/ and run
 
 Then run
 
-    cp ~/Documents/configs_scripts/.bashrc ~/.bashrc
-    cp ~/Documents/configs_scripts/.vimrc ~/.vimrc
+    cp ~/Documents/configs_scripts/home_dotfiles/.bashrc ~/.bashrc
+    cp ~/Documents/configs_scripts/home_dotfiles/.vimrc ~/.vimrc
 
-    cp ~/Documents/configs_scripts/fedora-kde/fedora-updates.sh ~/bin/
     cp ~/Documents/configs_scripts/scripts/* ~/bin/
+
+    ****** Fedora ********************************************************************************************
+    *   
+    *       cp ~/Documents/configs_scripts/fedora-kde/fedora-updates.sh ~/bin/
+    *   
+    **********************************************************************************************************
+
+    ****** Nobara ********************************************************************************************
+    *   
+    *       cp ~/Documents/configs_scripts/nobara/nobara-updates.sh ~/bin/
+    *   
+    **********************************************************************************************************
 
 If needed for the scripts, run
 
@@ -173,7 +215,7 @@ LaTeX packages:
     texlive-emptypage texlive-parskip texlive-multirow texlive-soul texlive-tcolorbox texlive-appendix texlive-textgreek \
     texlive-relsize texlive-scalerel texlive-stackengine texlive-anyfontsize texlive-arydshln texlive-bbding texlive-ulem
 
------- Manually Install .sty Files from .ins Files -----------------------------------------------------------
+------ Manually Install .sty Files from .ins Files ---------------------------------------
 
 To generate a .sty file from a .ins file, run
 
@@ -190,7 +232,7 @@ Then run
 
     sudo mktexlsr
 
------- Create .ins Files from .dtx Files ---------------------------------------------------------------------
+------ Create .ins Files from .dtx Files -------------------------------------------------
 
 In the directory where the .dtx file is, run
 
@@ -246,7 +288,7 @@ You can also run
 in any Neovim buffer to find any remaining issues.
 
 ==================================================================================================================================
-=== Oh-My-Posh ===================================================================================================================
+=== Command Prompt ===============================================================================================================
 ==================================================================================================================================
 
 Go to the Nerd Fonts website and download FiraMono Nerd Font.
@@ -266,18 +308,29 @@ Verify by running
 
 Open the Konsole settings via Ctrl+Shift+, and edit the desired profile to use the desired font, e.g.,
 FiraMonoNerdFontMono-Medium.
-To install Oh-My-Posh, run
-    
-    curl -s https://ohmyposh.dev/install.sh | bash -s
 
-Then enter
+    ****** Fedora ********************************************************************************************
+    *   
+    *   To install Oh-My-Posh, run
+    *       
+    *       curl -s https://ohmyposh.dev/install.sh | bash -s
+    *   
+    *   Then enter
+    *   
+    *       mkdir ~/.poshthemes/
+    *   
+    *       cp ~/Documents/configs_scripts/fedora-kde/jblab_2021.omp.json ~/.poshthemes/
+    *       cp ~/Documents/configs_scripts/fedora-kde/config.fish ~/.config/fish/
+    *   
+    **********************************************************************************************************
 
-    mkdir ~/.poshthemes/
-
-and copy jblab_2021.omp.json from ~/Documents/configs_scripts/fedora-kde/.
-Copy fedora-kde/config.fish to ~/.config/fish/ via
-
-    cp ~/Documents/configs_scripts/fedora-kde/config.fish ~/.config/fish/
+    ****** Nobara ********************************************************************************************
+    *   
+    *       cp ~/Documents/configs_scripts/nobara/starship.toml ~/.config/
+    *       cp ~/Documents/configs_scripts/nobara/starship.toml /usr/share/starship/
+    *       cp ~/Documents/configs_scripts/nobara/config.fish ~/.config/fish/
+    *   
+    **********************************************************************************************************
 
 Run fish and enjoy.
 
@@ -285,22 +338,14 @@ Run fish and enjoy.
 === Misc =========================================================================================================================
 ==================================================================================================================================
 
-Office suite:
+------ Office suite ----------------------------------------------------------------------
 
     sudo dnf install https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm
 
+------ Fluxer ----------------------------------------------------------------------------
 Go to fluxer.app and download the rpm x64 file.
 In a CLI, run
 
     sudo dnf install ~/Downloads/fluxer-stable-0.0.8-x86_64.rpm
 
 See https://paulsorensen.io/fedora-kde-plasma-post-installation-guide/ for more.
-
-==================================================================================================================================
-=== Nobara =======================================================================================================================
-==================================================================================================================================
-
-    cp ~/Documents/configs_scripts/nobara/starship.toml ~/.config/
-    cp ~/Documents/configs_scripts/nobara/starship.toml /usr/share/starship/
-    cp ~/Documents/configs_scripts/nobara/config.fish ~/.config/fish/
-    cp ~/Documents/configs_scripts/nobara/nobara_updates.sh ~/bin/
