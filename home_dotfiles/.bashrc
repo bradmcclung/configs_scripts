@@ -28,3 +28,6 @@ unset rc
 alias ls="ls -h --group-directories-first --color=auto"
 alias ll="ls -lh --group-directories-first --color=auto"
 alias la="ls -lah --group-directories-first --color=auto"
+
+# [8 April 2026]
+alias nobup="nobara_updates.sh"

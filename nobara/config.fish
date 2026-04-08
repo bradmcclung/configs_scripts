@@ -4,4 +4,6 @@ if status is-interactive
     alias ls "ls -h --group-directories-first --color=auto"
     alias ll "ls -lh --group-directories-first --color=auto"
     alias la "ls -lah --group-directories-first --color=auto"
+    
+    alias nobup "nobara_updates.sh"
 end
