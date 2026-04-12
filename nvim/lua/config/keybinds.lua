@@ -15,12 +15,12 @@ map('n', '<C-u>', '<C-u>zz')
 map('n', 'n', 'nzzzv')
 map('n', 'N', 'Nzzzv')
 
--- When pasting over highlighted text, keep the original copied text (instead of being overwritten by what you pasted over)
-map('x', '<leader>p', [["_dP"]])
-
 -- Yank text into system clipboard (useful for pasting text in Vim to other programs and applications
 map({'n', 'v'}, '<leader>y', [["+y]])
 map('v', '<leader>Y', [["+Y]])
+
+-- Paste from system clipboard
+map('x', '<leader>p', [["+p]])
 
 -- Delete text into void register (useful if you want to delete something without overwriting
 -- the standard vim register, e.g., text you copied and want to paste later)
