@@ -1,5 +1,5 @@
 
-fedora-kde/ and nobara/ contain files that configure fish and the prompt in the CLI for each respective distro.
+edora-kde/ and nobara/ contain files that configure fish and the prompt in the CLI for each respective distro.
 
 home_dotfiles/ contains .bashrc and .vimrc.
 
@@ -184,7 +184,7 @@ Then run
 
     ****** Fedora ********************************************************************************************
     *   
-    *       cp ~/Documents/configs_scripts/fedora-kde/fedora-updates.sh ~/bin/
+    *       cp ~/Documents/configs_scripts/fedora/fedora-updates.sh ~/bin/
     *   
     **********************************************************************************************************
 
@@ -319,8 +319,8 @@ FiraMonoNerdFontMono-Medium.
     *   
     *       mkdir ~/.poshthemes/
     *   
-    *       cp ~/Documents/configs_scripts/fedora-kde/jblab_2021.omp.json ~/.poshthemes/
-    *       cp ~/Documents/configs_scripts/fedora-kde/config.fish ~/.config/fish/
+    *       cp ~/Documents/configs_scripts/fedora/jblab_2021.omp.json ~/.poshthemes/
+    *       cp ~/Documents/configs_scripts/fedora/config.fish ~/.config/fish/
     *   
     **********************************************************************************************************
 
