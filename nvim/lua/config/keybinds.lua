@@ -20,7 +20,7 @@ map({'n', 'v'}, '<leader>y', [["+y]])
 map('v', '<leader>Y', [["+Y]])
 
 -- Paste from system clipboard
-map('x', '<leader>p', [["+p]])
+map('n', '<leader>p', [["+p]])
 
 -- Delete text into void register (useful if you want to delete something without overwriting
 -- the standard vim register, e.g., text you copied and want to paste later)

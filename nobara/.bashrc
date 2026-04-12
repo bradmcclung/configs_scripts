@@ -31,3 +31,9 @@ alias la="ls -lah --group-directories-first --color=auto"
 
 # [8 April 2026]
 alias nobup="nobara_updates.sh"
+
+# [26 April 2026]
+alias comptex="compile_tex.sh"
+alias qcomptex="quick_compile_tex.sh"
+alias cleantex="clean_tex.sh"
+alias qcleantex="quick_clean_tex.sh"

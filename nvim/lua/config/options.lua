@@ -47,6 +47,7 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 
+-- Prevent auto indenting in tex files
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'tex',
     callback = function()
@@ -56,6 +57,20 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.opt_local.indentexpr = ''
     end,
 })
+
+-- Enforce clipboard connection
+-- vim.g.clipboard = {
+--   name = "wl-clipboard",
+--   copy = {
+--     ["+"] = "wl-copy",
+--     ["*"] = "wl-copy",
+--   },
+--   paste = {
+--     ["+"] = "wl-paste",
+--     ["*"] = "wl-paste",
+--   },
+--   cache_enabled = 0,
+-- }
 
 -- Instead of using Vim backups, give Undotree access to long-running undos (e.g., undos/versions from days ago)
 --vim.opt.swapfile = false
