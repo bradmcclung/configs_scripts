@@ -7,8 +7,8 @@ if status is-interactive
     
     alias nobup "nobara_updates.sh"
     
-    alias comptex="compile_tex.sh"
-    alias qcomptex="quick_compile_tex.sh"
-    alias cleantex="clean_tex.sh"
-    alias qcleantex="quick_clean_tex.sh"
+    alias comptex "compile_tex.sh"
+    alias qcomptex "quick_compile_tex.sh"
+    alias cleantex "clean_tex.sh"
+    alias qcleantex "quick_clean_tex.sh"
 end
