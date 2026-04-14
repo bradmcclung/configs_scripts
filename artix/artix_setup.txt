@@ -12,4 +12,8 @@ Greeter:
 Network manager:
     Start with NetworkManager using iwd as the backend.
     Alternative to NetworkManager: ConnMan.
-    Alternative to iwd: wpa_supplicant.    
+    Alternative to iwd: wpa_supplicant.
+
+File manager:
+    Start with Thunar (lightweight and fast)
+    Alternative: Dolphin
