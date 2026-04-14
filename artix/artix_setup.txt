@@ -17,3 +17,8 @@ Network manager:
 File manager:
     Start with Thunar (lightweight and fast)
     Alternative: Dolphin
+
+Launcher:
+    Start with rofi -show run (Doesn't rely on .desktop files, no DE integration required, works in minimal setups, 
+        distro-agnostic, works on X11 and Wayland, has good documentation and customization).
+    Alternative: fuzzel
