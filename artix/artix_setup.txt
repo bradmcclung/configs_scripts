@@ -3,7 +3,7 @@ Init system:
     Switch to dinit if runit causes too many issues.
 
 Profile:
-    Desktop; Hyprland
+    Desktop; Niri
         Seat access: polkit
 
 Greeter:
