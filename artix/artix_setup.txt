@@ -2,24 +2,41 @@ Init system:
     Start with runit (good performance and documentation/support).
     Switch to dinit if runit causes too many issues.
 
-Profile:
-    Display server protocol: Wayland
-    Compositor: Niri
-
-Application launcher + task manager:
-    Noctalia
-
-Greeter:
-    greetd + gtkgreet
-
 Network manager:
     Start with NetworkManager using iwd as the backend.
     Alternative to NetworkManager: ConnMan.
     Alternative to iwd: wpa_supplicant.
 
+Display server protocol:
+    Wayland
+
+Compositor:
+    Niri
+
+Launcher:
+    Noctalia
+
+Task manager:
+    Noctalia
+
+Screen lock:
+    swaylock
+
+Greeter:
+    greetd
+
+Login GUI:
+    gtkgreet
+
+Audio:
+    PipeWire (and maybe WirePlumber?)
+
 File manager:
     Start with Thunar (lightweight and fast)
     Alternative: Dolphin
+
+Terminal:
+    Alacritty
 
 Browser:
     Librewolf
