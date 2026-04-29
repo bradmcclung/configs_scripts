@@ -3,8 +3,11 @@ Init system:
     Switch to dinit if runit causes too many issues.
 
 Profile:
-    Desktop; Niri
-        Seat access: polkit
+    Display server protocol: Wayland
+    Compositor: Niri
+
+Application launcher + task manager:
+    Noctalia
 
 Greeter:
     greetd + gtkgreet
@@ -17,11 +20,6 @@ Network manager:
 File manager:
     Start with Thunar (lightweight and fast)
     Alternative: Dolphin
-
-Launcher:
-    Start with rofi -show run (Doesn't rely on .desktop files, no DE integration required, works in minimal setups, 
-        distro-agnostic, works on X11 and Wayland, has good documentation and customization).
-    Alternative: fuzzel
 
 Browser:
     Librewolf
