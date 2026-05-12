@@ -1,5 +1,5 @@
 
-edora-kde/ and nobara/ contain files that configure fish and the prompt in the CLI for each respective distro.
+fedora-kde/ and nobara/ contain files that configure fish and the prompt in the CLI for each respective distro.
 
 home_dotfiles/ contains .bashrc and .vimrc.
 
@@ -25,7 +25,7 @@ everything else applies to both distros.
 
     sudo hostnamectl set-hostname <new hostname>
 
-    sudo dnf remove libreoffice\* dragon neochat
+    sudo dnf remove dragon neochat
     sudo dnf install vim neovim python3-neovim git fish vlc kompare gdb fd-find texlive-scheme-medium fastfetch
 
     ****** Fedora ********************************************************************************************
@@ -163,7 +163,6 @@ If asked whether you're sure about connecting, enter yes.
 Set the following for config (I recommend using the hostname you set earlier):
 
     git config --global user.name '<hostname>'
-
     git config --global user.email '<user email>'
 
 ==================================================================================================================================
@@ -286,6 +285,9 @@ You can also run
     :checkhealth
 
 in any Neovim buffer to find any remaining issues.
+Finally, make neovim the default text editor for git:
+
+    git config --global core.editor 'nvim --wait'
 
 ==================================================================================================================================
 === Command Prompt ===============================================================================================================
