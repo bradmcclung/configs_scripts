@@ -7,6 +7,8 @@ Network manager:
     Alternative to NetworkManager: ConnMan.
     Alternative to iwd: wpa_supplicant.
 
+    >>> ConnMan is slightly more lightweight, but NetworkManager is far more convenient
+
 Display server protocol:
     Wayland
 
