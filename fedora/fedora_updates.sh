@@ -21,9 +21,10 @@ for repo in \
     "$HOME/Documents/my_logs"
 do
     if [ -d "$repo/.git" ]; then
-        echo "-------------------- $repo --------------------"
+        echo "-------------------- $repo"
         git -C "$repo" pull --ff-only
     else
         echo "Skipping missing repo: $repo"
     fi
+    echo
 done
