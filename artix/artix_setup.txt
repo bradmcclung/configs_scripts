@@ -44,3 +44,5 @@ Browser:
 
 AUR Helper:
     Trizen [Alternative: Paru]
+
+Install flatpak for Discord and spotify to isolate and sandbox them
