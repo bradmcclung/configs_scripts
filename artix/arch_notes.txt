@@ -1,3 +1,33 @@
 ==================================================================================================================================
 === Pacman =======================================================================================================================
 ==================================================================================================================================
+
+-S = Sync
+-y = refresh
+-u = update
+
+-R = Remove
+
+-Q = Query
+-q = quiet (don't show extra unnecessary info)
+
+Update all packages:
+    pacman -Syu
+
+Install packages:
+    pacman -S <package1> <package2> ...
+
+List all dependencies that are no longer required (orphans):
+    pacman -Qdt
+
+Remove orphaned packages and their dependencies not used by other packages without creating backup config files:
+    pacman -Rns $(pacman -Qdtq)
+
+Search for packages in the database:
+    pacman -Ss <package1> <package2> ...
+
+Clean the pacman cache for old package versions:
+    paccache -rk2
+
+Clean the pacman cache for all versions of uninstalled packages:
+    paccache -urk0
