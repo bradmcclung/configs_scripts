@@ -34,12 +34,13 @@ Audio:
     PipeWire (and maybe WirePlumber?)
 
 File manager:
-    Start with Thunar (lightweight and fast)
-    Alternative: Dolphin
+    Start with Thunar (lightweight and fast) [Alternative: Dolphin]
 
 Terminal:
     Alacritty
 
 Browser:
-    Librewolf
-    Alternative: Mullvad
+    Librewolf [Alternative: Mullvad]
+
+AUR Helper:
+    Trizen [Alternative: Paru}
