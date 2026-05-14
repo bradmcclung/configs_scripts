@@ -43,4 +43,4 @@ Browser:
     Librewolf [Alternative: Mullvad]
 
 AUR Helper:
-    Trizen [Alternative: Paru}
+    Trizen [Alternative: Paru]
