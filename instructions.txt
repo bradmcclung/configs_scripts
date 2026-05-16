@@ -1,7 +1,7 @@
 
-fedora-kde/ and nobara/ contain files that configure fish and the prompt in the CLI for each respective distro.
+fedora/ and nobara/ contain files that configure fish and the prompt in the CLI for each respective distro.
 
-home_dotfiles/ contains .bashrc and .vimrc.
+vim/ contains all the configuraiton for Vim.
 
 nvim/ contains all the configuration for Neovim.
 
@@ -26,7 +26,7 @@ everything else applies to both distros.
     sudo hostnamectl set-hostname <new hostname>
 
     sudo dnf remove dragon neochat
-    sudo dnf install vim neovim python3-neovim git fish vlc kompare gdb fd-find texlive-scheme-medium fastfetch
+    sudo dnf install vim neovim python3-neovim git fish vlc kompare gdb ripgrep fd-find fzf texlive-scheme-medium fastfetch
 
     ****** Fedora ********************************************************************************************
     *   
@@ -176,19 +176,18 @@ Go to ~/Documents/ and run
 
 Then run
 
-    cp ~/Documents/configs_scripts/home_dotfiles/.bashrc ~/.bashrc
-    cp ~/Documents/configs_scripts/home_dotfiles/.vimrc ~/.vimrc
-
     cp ~/Documents/configs_scripts/scripts/* ~/bin/
 
     ****** Fedora ********************************************************************************************
     *   
+    *       cp ~/Documents/configs_scripts/fedora/dot_bashrc ~/.bashrc
     *       cp ~/Documents/configs_scripts/fedora/fedora-updates.sh ~/bin/
     *   
     **********************************************************************************************************
 
     ****** Nobara ********************************************************************************************
     *   
+    *       cp ~/Documents/configs_scripts/nobara/dot_bashrc ~/.bashrc
     *       cp ~/Documents/configs_scripts/nobara/nobara-updates.sh ~/bin/
     *   
     **********************************************************************************************************
@@ -260,12 +259,37 @@ Then run
 like normal and follow the rest of the instructions above.
 
 ==================================================================================================================================
+=== Vim ==========================================================================================================================
+==================================================================================================================================
+
+Make sure you ran
+
+    sudo dnf install vim git ripgrep fd-find fzf
+
+Copy config files via
+
+    cp ~/Documents/configs_scripts/vim/dot_vimrc ~/.vimrc
+    cp ~/Documents/configs_scripts/vim/dot_vim/* ~/.vim
+
+Run
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+Run
+
+    vim .
+
+Inside netrw, run
+
+    :PlugInstall
+
+==================================================================================================================================
 === Neovim =======================================================================================================================
 ==================================================================================================================================
 
 Make sure you ran
 
-    sudo dnf install neovim pyhton3-neovim fd-find
+    sudo dnf install neovim pyhton3-neovim ripgrep fd-find
 
 (fd-find is for the telescope plugin).
 Copy config files via
@@ -339,10 +363,6 @@ Run fish and enjoy.
 ==================================================================================================================================
 === Misc =========================================================================================================================
 ==================================================================================================================================
-
------- Office suite ----------------------------------------------------------------------
-
-    sudo dnf install https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm
 
 ------ Fluxer ----------------------------------------------------------------------------
 Go to fluxer.app and download the rpm x64 file.
