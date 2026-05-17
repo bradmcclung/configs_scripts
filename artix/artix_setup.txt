@@ -43,6 +43,65 @@ Browser:
     Librewolf [Alternative: Mullvad]
 
 AUR Helper:
-    Trizen [Alternative: Paru]
+    Paru
 
 Install flatpak for Discord and spotify to isolate and sandbox them
+
+==================================================================================================================================
+=== Start ========================================================================================================================
+==================================================================================================================================
+
+After booting the Artix ISO from USB, use the following login info:
+
+    username: root
+    password: artix
+
+------ Set Up Wifi  ----------------------------------------------------------------------
+
+In the terminal, run
+
+    ip a
+
+to check the available internet connections.
+For wifi, check if an interface like wlan0 has an ip address (listed as ipnet).
+If it doesn't, execute
+
+    ip link set wlan0 up
+
+If an error occurs that cites something like RF-kill, execute
+
+    rfkill unblock wifi
+
+and then
+
+    ip link set wlan0 up
+
+To connect to a wireless network, execute
+
+    connmanctl
+
+This will initiate a connman session.
+Next, scan for wifi connections by executing
+
+    scan wifi
+
+    services
+
+Look for your wifi connection, and take note of the first three numbers after wifi_<alphanumeric>_.
+Then execute
+
+    agent on
+
+    connect wifi_<alphanumeric>_<first three nums>
+
+using tab completion after wifi_ and <first three nums>.
+Afterwards, enter the wifi password.
+Finally, execute
+
+    quit
+
+to finish.
+
+------ Set Up Wifi  ----------------------------------------------------------------------
+
+
