@@ -56,7 +56,7 @@ After booting the Artix ISO from USB, use the following login info:
     username: root
     password: artix
 
------- Set Up Wifi  ----------------------------------------------------------------------
+------ Set Up Wifi -----------------------------------------------------------------------
 
 In the terminal, run
 
@@ -101,7 +101,32 @@ Finally, execute
     quit
 
 to finish.
+Execute
 
------- Set Up Wifi  ----------------------------------------------------------------------
+    ip a
 
+to check that wlan0 has an ip address.
 
+------  ----------------------------------------------------------------------
+
+Execute
+
+    lsblk
+
+to list block devices (i.e., disks and partitions).
+You should see something like nvme0n1 and/or nvme1n1.
+For me, nvme1n1 should be Windows and nvme0n1 should be GNU/Linux.
+To create the partitions on nvme0n1 (or recreate them), execute
+
+    cfdisk /dev/nvme0n1
+
+If partitions already exist, highlight the partitions and delete them.
+Then select Write and enter yes to confirm.
+Next, select New.
+My motherboard should be UEFI only, so we need to create an EFI partition.
+To create the EFI partition, delete the number currently listed (should be the drive's total space), replace it with 200M (200 MB), and hit enter.
+This needs to be EFI, so select Type and then EFI System.
+For the second partition, move down to Free space and select New.
+Replace the currently listed number with [DRIVE SPACE SUITABLE FOR ROOT PARTITION] and hit enter.
+Make sure its type is listed as Linux filesystem.
+For the third partition, highlight Free space, select New, and replace the number with 
