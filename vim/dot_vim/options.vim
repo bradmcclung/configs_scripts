@@ -20,11 +20,11 @@ set softtabstop=4
 set noautoindent
 set nosmartindent
 set nocindent
+set indentexpr=''
 
 set nohlsearch " Prevents Vim search from keeping searched terms highlighted
 set scrolloff=8 " When scrolling through a file, there will always be at least 8 lines above or below current line
 set termguicolors " For better colors in terminal
-
 set mouse=a " Activate the mouse
 
 " Prevent continuing comment characters when entering a new line
