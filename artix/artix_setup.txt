@@ -50,8 +50,10 @@ Install flatpak for Discord and spotify to isolate and sandbox them
 Include section on automatically creating snapshots and integrating them with GRUB like Nobara
 Also include section on creating a swapfile
 
+Since I couldn't find a singular guide on the particular install I wanted, I did use ChatGPT to help with questions and ensure the process is correct.
+
 ==================================================================================================================================
-=== Start ========================================================================================================================
+=== Base Installation ============================================================================================================
 ==================================================================================================================================
 
 After booting the Artix ISO from USB, use the following login info:
@@ -178,4 +180,76 @@ Now mount the remaining subolumes and the boot partition:
     mount -o subvol=@snapshots /dev/nvme0n1p2 /mnt/.snapshots
     mount /dev/nvme0n1p1 /mnt/boot/efi
 
+Finally, we'll create a swapfile:
 
+    mkdir /mnt/swap
+
+For btrfs, we need to disable copy-on-write via
+
+    chattr +C /mnt/swap
+
+Next,
+
+    dd if=/dev/zero of=/mnt/swap/swapfile bs=1G count=16 status=progress
+    chmod 600 /mnt/swap/swapfile
+    mkswap /mnt/swap/swapfile
+    swapon /mnt/swap/swapfile
+
+Here we can install the base system:
+
+    basestrap /mnt base base-devel runit elogind-runit linux linux-firmware vim amd-ucode
+
+(use intel-ucode for intel processors).
+This will take some time to download and install.
+
+Next we need to generate the filesystem table where the mount points are stored:
+
+    fstabgen -U /mnt >> /mnt/etc/fstab
+
+With Vim, you should be able to view the fstab file:
+
+    view /mnt/etc/fstab
+
+Exit view with
+
+    :q
+
+and hit enter.
+
+==================================================================================================================================
+=== Base Configuration ===========================================================================================================
+==================================================================================================================================
+
+Now we can enter into our system from the ISO via
+
+    artix-chroot /mnt
+
+Next we'll set the time zone.
+Execute
+
+    ls /usr/share/zoneinfo
+
+to find your region, and then execute 
+
+    ls /usr/share/zoneinfo/<region>
+
+to find your city.
+Then execute
+
+    ln -sf /usr/share/zoneinfo/<region>/<city> /etc/localtime
+
+and synchronize your hardware clock with your system clock:
+
+    hwclock --systohc
+
+==================================================================================================================================
+=== Sources ======================================================================================================================
+==================================================================================================================================
+
+https://www.youtube.com/watch?v=mIpZA6z-Ctk
+
+https://wiki.artixlinux.org/
+
+https://wiki.archlinux.org/
+
+ChatGPT
